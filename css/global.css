@@ -1,0 +1,151 @@
+/* === VARIABLES DE COLOR (Tema Delivery) === */
+:root {
+    --primary-dark: #1e1e1e;
+    --secondary-dark: #2c2c2c;
+    --accent-orange: #FF8F00; 
+    --light-text: #f0f0f0;
+    --subtle-text: #b0b0b0;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --ui-success: #00ff88;
+    --ui-error: #c0392b;
+    --ui-pending: #ffca28;
+
+    /* Variables extra de dashboards/admin */
+    --bg-dark: #0d0d0d;
+    --bg-card: #101010;
+    --bg-table: #151515;
+    --bg-header: #202020;
+    --text-light: #eee;
+    --text-muted: #bbb;
+}
+
+/* === RESET GENERAL === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+body {
+    background: linear-gradient(135deg, var(--primary-dark), #101010);
+    color: var(--light-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* === CONTENEDOR PRINCIPAL === */
+.app-container {
+    width: 95%;
+    max-width: 450px;
+    text-align: center;
+    background: var(--secondary-dark);
+    padding: 45px 30px;
+    border-radius: 16px;
+    box-shadow: 0 15px 30px var(--shadow-color), 0 0 10px rgba(255, 255, 255, 0.05);
+    border-top: 5px solid var(--accent-orange);
+}
+
+.app-container.dashboard-view {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 30px;
+}
+
+.logo {
+    font-size: 2.8em;
+    font-weight: 800;
+    margin-bottom: 5px;
+    color: var(--accent-orange);
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px rgba(255, 143, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo i {
+    margin-right: 10px;
+    font-size: 1.1em;
+}
+
+.slogan {
+    font-size: 1em;
+    color: var(--subtle-text);
+    margin-bottom: 40px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* BOTONES BASE */
+.btn, .btn-submit {
+    border: none;
+    padding: 18px 25px;
+    border-radius: 8px; 
+    font-size: 1.1em;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    cursor: pointer;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    color: var(--primary-dark);
+    background-color: var(--accent-orange);
+}
+
+.btn i { font-size: 1.5em; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); }
+.btn:active { transform: translateY(0); box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4) inset; }
+
+/* PIE DE PÁGINA */
+footer {
+    margin-top: 45px;
+    font-size: 0.85em;
+    opacity: 0.7;
+    color: var(--subtle-text);
+    letter-spacing: 0.3px;
+}
+
+/* ESTILOS POR ROL TEMÁTICOS */
+.usuario { background-color: var(--light-text); color: var(--primary-dark); }
+.domiciliario { background-color: var(--accent-orange); color: var(--primary-dark); font-weight: 800; }
+
+/* FORMULARIOS GENERALES */
+.login-form {
+    display: flex;
+    flex-direction: column; 
+    gap: 18px; 
+    margin-bottom: 25px;
+    width: 100%; 
+}
+
+.login-form input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid var(--subtle-text);
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: var(--primary-dark); 
+    color: var(--light-text);
+    caret-color: var(--accent-orange);
+}
+
+.login-form input:focus {
+    border-color: var(--accent-orange);
+    box-shadow: 0 0 10px rgba(255, 143, 0, 0.3);
+    outline: none;
+}
+
+.login-form a {
+    color: var(--accent-orange);
+    text-decoration: none;
+    font-weight: 600;
+}

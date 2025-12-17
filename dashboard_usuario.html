@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Cliente - SHOT DOMIS</title>
+
+    <link rel="stylesheet" href="css/cliente.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+<div class="app-container dashboard-view">
+
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-shopping-bag"></i> Dashboard Cliente
+        </div>
+        <p class="slogan">Tu historial de pedidos y más</p>
+        <button class="logout-btn" onclick="logout()">
+            <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+        </button>
+    </header>
+
+    <main>
+
+        <!-- Información del usuario -->
+        <div class="card user-card">
+            <p class="welcome-message">
+                Hola, <span id="user-name">Usuario</span>.
+            </p>
+            <p class="user-info">
+                Email: <span id="user-email">cargando...</span>
+            </p>
+        </div>
+
+        <!-- Historial de pedidos -->
+        <details class="card accordion" open>
+            <summary class="section-title">
+                📦 Historial de Órdenes
+            </summary>
+
+            <div id="listaPedidos">
+                <div class="placeholder-box"> 
+                    <i class="fas fa-clipboard-list icon"></i>
+                    <div>
+                        <div class="placeholder-title">Cargando historial...</div>
+                        <div class="placeholder-text">Tus pedidos aparecerán aquí en cuanto los realices.</div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- Hacer Pedido -->
+        <h3 class="section-title">📍 Hacer un Pedido</h3>
+
+        <button id="btnHacerPedido" class="new-order-btn">
+            + Hacer Pedido
+        </button>
+
+        <form id="formPedido" class="form-card" aria-label="Formulario de pedido">
+            <input type="text" id="recoger" placeholder="Lugar de Recogida" required>
+            <input type="text" id="contactoRecoger" placeholder="Nombre de quién entrega" required>
+            <input type="text" id="entregar" placeholder="Dirección de Entrega" required>
+            <input type="text" id="contactoEntregar" placeholder="Nombre de quién recibe" required>
+
+            <textarea id="descripcion" placeholder="Descripción del objeto" rows="3" required></textarea>
+
+            <select id="pago" required>
+                <option value="Paga al recibir">Paga al recibir</option>
+                <option value="Pagado digital">Pagado digital</option>
+            </select>
+
+            <button type="submit" class="btn-submit">Confirmar Pedido</button>
+        </form>
+
+    </main>
+</div>
+
+<script src="js/script.js"></script>
+<script src="js/dashboard_usuario.js"></script>
+
+</body>
+</html>
+

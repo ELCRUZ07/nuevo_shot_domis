@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOT DOMIS - Acceso de Roles (Delivery Theme)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-shipping-fast"></i> SHOT DOMIS
+            </div>
+            <p class="slogan">-- Plataforma de Acceso Rápido --</p>
+        </header>
+
+        <main class="login-options">
+            <button class="btn usuario" data-role="cliente">
+                <i class="fas fa-shopping-bag"></i>
+                CLIENTE
+            </button>
+            
+            <button class="btn domiciliario" data-role="domiciliario">
+                <i class="fas fa-motorcycle"></i>
+                DOMICILIARIO 
+            </button>
+        </main>
+
+        <footer>
+            Verifica tus credenciales y selecciona tu rol.
+        </footer>
+
+    </div>
+    
+    <script>
+        // Espera a que cargue todo el contenido
+        document.addEventListener("DOMContentLoaded", () => {
+            const botones = document.querySelectorAll(".btn");
+
+            botones.forEach(boton => {
+                boton.addEventListener("click", () => {
+                    const rol = boton.getAttribute("data-role");
+
+                    if (rol === "cliente") {
+                        window.location.href = "login_usuario.html";
+                    } else if (rol === "domiciliario") {
+                        window.location.href = "login_domiciliario.html";
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

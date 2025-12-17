@@ -1,0 +1,136 @@
+/* ==============================
+   VARIABLES DE COLOR
+================================ */
+:root {
+    --primary-dark: #1e1e1e;
+    --secondary-dark: #2c2c2c;
+    --accent-orange: #FF8F00; 
+    --light-text: #f0f0f0;
+    --subtle-text: #b0b0b0;
+    --shadow-color: rgba(0,0,0,0.4);
+}
+
+/* ==============================
+   RESET
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ==============================
+   BODY
+================================ */
+body {
+    background: linear-gradient(135deg, var(--primary-dark), #101010);
+    color: var(--light-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ==============================
+   CONTENEDOR PRINCIPAL
+================================ */
+.app-container {
+    width: 95%;
+    max-width: 450px;
+    background: var(--secondary-dark);
+    padding: 45px 30px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 15px 30px var(--shadow-color), 0 0 10px rgba(255,255,255,0.05);
+    border-top: 5px solid var(--accent-orange);
+}
+
+/* ==============================
+   LOGO
+================================ */
+.logo {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--accent-orange);
+    margin-bottom: 10px;
+    text-shadow: 0 0 8px rgba(255,143,0,0.5);
+}
+
+.slogan {
+    color: var(--subtle-text);
+    margin-bottom: 35px;
+    letter-spacing: 0.5px;
+}
+
+/* ==============================
+   BOTONES DE ROL
+================================ */
+.login-options {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.btn {
+    border: none;
+    padding: 18px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    letter-spacing: 0.8px;
+    transition: 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.35);
+}
+
+/* Cliente */
+.btn.usuario {
+    background: var(--light-text);
+    color: var(--primary-dark);
+}
+
+/* Domiciliario */
+.btn.domiciliario {
+    background: var(--accent-orange);
+    color: var(--primary-dark);
+    font-weight: 800;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.45);
+}
+
+/* ==============================
+   FOOTER
+================================ */
+footer {
+    margin-top: 25px;
+    font-size: 0.85em;
+    color: var(--subtle-text);
+    opacity: 0.75;
+}
+
+/* ==============================
+   RESPONSIVE
+================================ */
+@media (max-width: 600px) {
+    .app-container {
+        padding: 35px 22px;
+    }
+
+    .logo {
+        font-size: 1.6rem;
+    }
+
+    .btn {
+        padding: 16px;
+        font-size: 1.05em;
+    }
+}

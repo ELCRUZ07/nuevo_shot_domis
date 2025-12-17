@@ -1,0 +1,173 @@
+/* ==============================
+   VARIABLES Y COLORES
+================================ */
+:root {
+    --primary-dark: #1e1e1e;
+    --secondary-dark: #2c2c2c;
+    --accent-orange: #FF8F00; 
+    --light-text: #f0f0f0;
+    --subtle-text: #b0b0b0;
+    --shadow-color: rgba(0,0,0,0.4);
+}
+
+/* ==============================
+   RESET Y ESTILOS GENERALES
+================================ */
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    transition: all 0.3s ease;
+}
+
+body {
+    background: linear-gradient(135deg, var(--primary-dark), #101010);
+    color: var(--light-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ==============================
+   CONTENEDOR PRINCIPAL
+================================ */
+.app-container {
+    width: 95%;
+    max-width: 450px;
+    text-align: center;
+    background: var(--secondary-dark);
+    padding: 45px 30px;
+    border-radius: 16px;
+    box-shadow: 0 15px 30px var(--shadow-color), 0 0 10px rgba(255,255,255,0.05);
+    border-top: 5px solid var(--accent-orange);
+}
+
+.app-container h2 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: var(--accent-orange);
+    text-shadow: 0 0 5px rgba(255,143,0,0.5);
+}
+
+.app-container p.slogan {
+    margin-bottom: 30px;
+    color: var(--subtle-text);
+}
+
+/* ==============================
+   FORMULARIOS
+================================ */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.login-form input,
+.login-form select,
+.login-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid var(--subtle-text);
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: var(--primary-dark);
+    color: var(--light-text);
+    caret-color: var(--accent-orange);
+}
+
+.login-form input:focus,
+.login-form select:focus,
+.login-form textarea:focus {
+    border-color: var(--accent-orange);
+    box-shadow: 0 0 10px rgba(255,143,0,0.3);
+    outline: none;
+}
+
+/* ==============================
+   BOTONES
+================================ */
+.btn {
+    border: none;
+    padding: 18px 25px;
+    border-radius: 8px; 
+    font-size: 1.1em;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.btn.usuario {
+    background-color: var(--light-text);
+    color: var(--primary-dark);
+}
+
+.btn.domiciliario {
+    background-color: var(--accent-orange);
+    color: var(--primary-dark);
+    font-weight: 800;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* ==============================
+   LINKS
+================================ */
+.login-form a {
+    color: var(--accent-orange);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-form a:hover {
+    text-decoration: underline;
+}
+
+/* ==============================
+   CAMPOS OCULTOS DOMICILIARIO
+================================ */
+.hidden-fields {
+    display: none;
+}
+
+/* ==============================
+   PIE DE PÁGINA / INFO
+================================ */
+footer {
+    margin-top: 25px;
+    font-size: 0.85em;
+    opacity: 0.7;
+    color: var(--subtle-text);
+}
+
+/* ==============================
+   RESPONSIVE
+================================ */
+@media (max-width: 600px) {
+    .app-container {
+        padding: 35px 20px;
+    }
+
+    .app-container h2 {
+        font-size: 1.5em;
+    }
+
+    .btn {
+        padding: 15px 20px;
+        font-size: 1em;
+    }
+}

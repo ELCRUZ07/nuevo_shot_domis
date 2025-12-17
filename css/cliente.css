@@ -1,0 +1,205 @@
+/* === GOOGLE FONTS === */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+/* === VARIABLES DE COLOR (Tema Delivery) === */
+:root {
+    --primary-dark: #1e1e1e;
+    --secondary-dark: #2c2c2c;
+    --accent-orange: #FF8F00; 
+    --light-text: #f0f0f0;
+    --subtle-text: #b0b0b0;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+
+    --ui-success: #00ff88;
+    --ui-error: #c0392b;
+    --ui-pending: #ffca28;
+
+    --bg-dark: #0d0d0d;
+    --bg-card: #101010;
+    --bg-table: #151515;
+    --bg-header: #202020;
+    --text-muted: #bbb;
+}
+
+/* === ESTILOS GENERALES === */
+body {
+    background: var(--bg-dark);
+    color: var(--light-text);
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.app-container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+/* === BOTÓN DE HACER PEDIDO === */
+#btnHacerPedido {
+    display: block;
+    width: auto;
+    margin: 20px auto;
+    padding: 12px 22px;
+    font-weight: 600;
+    border-radius: 10px;
+    background: var(--accent-orange);
+    color: #1e1e1e;
+    border: none;
+    cursor: pointer;
+}
+
+/* === BOTONES GENERALES === */
+.btn-submit, .delivered-btn, .btn-aceptar, .accept-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.btn-submit, .delivered-btn {
+    background-color: var(--ui-success);
+    color: var(--primary-dark);
+}
+
+.btn-aceptar, .accept-btn {
+    background-color: var(--accent-orange);
+    color: var(--primary-dark);
+}
+
+/* === TARJETAS DE PEDIDO === */
+.pedido-card, .card {
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    padding: 15px;
+    background: var(--bg-card);
+}
+
+/* === ESTADOS === */
+.estado.pendiente { color: var(--ui-pending); }
+.estado.entregado { color: var(--ui-success); }
+
+/* === LISTAS ACORDEÓN === */
+.list-accordion summary {
+    list-style: none;
+    cursor: pointer;
+    display: block;
+}
+
+.list-accordion summary::-webkit-details-marker,
+.list-accordion summary::marker { display: none; }
+
+.list-accordion summary:after {
+    content: '▶️';
+    float: right;
+    transition: transform 0.2s;
+    color: var(--light-text);
+    font-size: 0.8em;
+    margin-left: 10px;
+}
+
+.list-accordion[open] summary:after { content: '🔽'; }
+
+/* === PLACEHOLDER BOX === */
+.placeholder-box {
+    padding: 18px;
+    background: #0f1620;
+    border-radius: 10px;
+    color: #bfc8d9;
+    min-height: 100px;
+    display:flex; 
+    align-items:center; 
+    gap:12px;
+}
+
+/* === FORMULARIOS === */
+#formPedido input, 
+#formPedido textarea, 
+#formPedido select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.04);
+    background: #071019;
+    color: var(--light-text);
+}
+
+.btn-submit { 
+    margin-top: 18px; 
+    background-color: var(--ui-success); 
+    color: var(--primary-dark); 
+}
+
+/* === RESPONSIVE — Tabletas === */
+@media (max-width: 768px) {
+  
+  body { padding: 10px; }
+
+  .app-container {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* Botón de logout flotante */
+  button[onclick="logout()"] {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+
+  .welcome-message,
+  .user-info { font-size: 0.9rem; }
+
+  #btnHacerPedido {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+  }
+
+  .list-accordion summary {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  #formPedido input,
+  #formPedido textarea,
+  #formPedido select {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .btn-submit {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .pedido-card,
+  .card {
+    padding: 12px;
+    font-size: 0.85rem;
+  }
+
+  .info-domi p { font-size: 0.8rem; }
+}
+
+/* === RESPONSIVE — Celulares pequeños === */
+@media (max-width: 480px) {
+  .logo { font-size: 1.1rem; }
+  .section-title { font-size: 1rem; }
+}

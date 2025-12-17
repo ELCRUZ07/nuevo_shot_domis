@@ -1,0 +1,93 @@
+:root{
+    --primary-color:#1e88e5;
+    --success-color:#00ff88;
+    --warning-color:#ff8a00;
+    --bg-dark:#0b0f13;
+    --card-bg:#1a1a1a;
+    --text-light:#e6eef8;
+    --text-muted:#bfc9d9;
+}
+
+body{
+    font-family:"Poppins",sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-light);
+    margin:0;
+    padding:30px;
+    font-size:1.1rem; 
+    line-height:1.5;
+}
+
+.app-container.dashboard-view{
+    max-width:720px;
+    margin:0 auto;
+    padding:30px;
+}
+
+header .logo{
+    font-size:2.4rem; 
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.slogan{
+    color:#9aa6bd;
+    margin:6px 0 20px 0;
+    font-size:1.1rem;
+}
+
+#estadoDomiciliario{
+    margin-top:25px;
+    padding:22px; 
+    background: var(--card-bg);
+    border-left:4px solid var(--warning-color);
+    border-radius:10px;
+    font-size:1.1rem;
+}
+
+#estadoLabel{
+    font-weight:700;
+    font-size:1.3rem; 
+}
+
+#estadoDesc{
+    margin-top:8px;
+    font-size:1.05rem;
+    color: var(--text-muted);
+}
+
+main h3{
+    margin-top:35px;
+    margin-bottom:15px;
+    color: var(--primary-color);
+    font-weight:700;
+    border-bottom:1px dashed rgba(255,255,255,0.05);
+    padding-bottom:6px;
+    font-size:1.35rem; 
+}
+
+.card{
+    margin-top:18px;
+    padding:22px; 
+    background: var(--card-bg);
+    border-radius:10px;
+    font-size:1.1rem;
+}
+
+.card p{
+    margin:6px 0;
+}
+
+.logout-btn{
+    margin-top:30px;
+    padding:14px 20px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    background:#c0392b;
+    color:#fff;
+    font-weight:700;
+    font-size:1.1rem;
+}

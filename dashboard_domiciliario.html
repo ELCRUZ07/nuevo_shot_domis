@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Domiciliario - SHOT DOMIS</title>
+
+    <!-- Tipografía -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Iconos -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- Estilos globales -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Estilos específicos del domiciliario -->
+    <link rel="stylesheet" href="css/domiciliario.css">
+</head>
+
+<body>
+
+<div class="app-container dashboard-view">
+
+    <header>
+        <div class="logo"><i class="fas fa-motorcycle"></i> Dashboard Domiciliario</div>
+        <p class="slogan">Bienvenido a SHOT DOMIS</p>
+    </header>
+
+    <!-- Estado Actual -->
+    <div id="estadoDomiciliario" class="card">
+        <p id="estadoLabel">LIBRE</p>
+        <p id="estadoDesc">Esperando un pedido...</p>
+    </div>
+
+    <main>
+
+        <!-- Pedido Asignado -->
+        <h3>🚚 Mi Pedido Asignado</h3>
+        <div id="pedidoAsignadoUnico" class="lista-pedidos">
+            <!-- JS inyecta contenido aquí -->
+        </div>
+
+        <!-- Historial -->
+        <h3>📜 Historial de Entregas</h3>
+        <div id="listaHistorial" class="lista-pedidos">
+            <!-- JS inyecta contenido aquí -->
+        </div>
+
+        <!-- Botón Cerrar Sesión -->
+        <button class="logout-btn" onclick="logout()">
+            <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+        </button>
+
+    </main>
+
+</div>
+
+<!-- Scripts principales -->
+<script src="js/script.js"></script>
+<script src="js/dashboard_domiciliario.js"></script>
+
+</body>
+</html>

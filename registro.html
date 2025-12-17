@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - SHOT DOMIS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/registro.css">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <style> 
+        /* Regla CSS para ocultar campos que solo usa el domiciliario */
+        .hidden-fields { 
+            display: none !important;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="app-container" id="registro-container">
+        <h2 id="form-title">Registro de Cliente</h2>
+        <p class="slogan" id="form-slogan" style="margin-bottom: 30px;">Crea tu cuenta para empezar a pedir a domicilio.</p>
+
+        <form class="login-form" id="registro-form">
+            
+            <input type="text" id="nombre" placeholder="Nombre completo" required>
+            <input type="email" id="email" placeholder="Correo electrónico" required>
+            <input type="text" id="telefono" placeholder="Número de teléfono" required> 
+            
+            <input type="password" id="password" placeholder="Contraseña (mín. 6 caracteres)" required>
+            <input type="password" id="confirm-password" placeholder="Confirmar Contraseña" required>
+
+            <div id="domi-fields" class="hidden-fields">
+                <h3>Datos de Domiciliario y Vehículo</h3>
+                
+                <input type="text" id="documento" placeholder="Cédula / Identificación" />
+                <input type="text" id="placa" placeholder="Placa del Vehículo (Ej: JKL-123)" />
+
+                <select id="tipo-transporte" class="input-select">
+                    <option value="" selected disabled>Tipo de Transporte</option>
+                    <option value="moto">Moto</option>
+                    <option value="carro">Carro</option>
+                    <option value="bicicleta">Bicicleta</option>
+                </select>
+
+                <select id="disponibilidad" class="input-select">
+                    <option value="" selected disabled>¿Disponibilidad horario completo?</option>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="btn usuario" id="submit-btn">
+                <i class="fas fa-user-plus"></i> REGISTRARME
+            </button>
+            
+            <p style="margin-top: 25px;">
+                ¿Ya tienes cuenta? <a href="login_usuario.html">Inicia Sesión</a>
+            </p>
+        </form>
+    </div>
+
+    <script src="js/script.js"></script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const domiFields = document.getElementById('domi-fields');
+            const formTitle = document.getElementById('form-title');
+            const formSlogan = document.getElementById('form-slogan');
+            const submitBtn = document.getElementById('submit-btn');
+
+            // Función para cambiar la vista según el hash de la URL
+            function updateFormForRole() {
+                const isDomiRegistration = window.location.hash === '#domiciliario';
+                
+                if (isDomiRegistration) {
+                    // Es domiciliario: Muestra campos y cambia textos
+                    if (domiFields) domiFields.classList.remove('hidden-fields');
+                    
+                    if (formTitle) formTitle.textContent = 'Registro de Domiciliario';
+                    if (formSlogan) formSlogan.textContent = 'Completa tus datos para empezar a recibir pedidos. (Sujeto a aprobación)';
+                    if (submitBtn) submitBtn.innerHTML = '<i class="fas fa-motorcycle"></i> SOLICITAR APROBACIÓN';
+
+                } else {
+                    // Es cliente: Oculta campos y restaura textos
+                    if (domiFields) domiFields.classList.add('hidden-fields');
+                    
+                    if (formTitle) formTitle.textContent = 'Registro de Cliente';
+                    if (formSlogan) formSlogan.textContent = 'Crea tu cuenta para empezar a pedir a domicilio.';
+                    if (submitBtn) submitBtn.innerHTML = '<i class="fas fa-user-plus"></i> REGISTRARME';
+                }
+            }
+
+            // Ejecutar la función al cargar la página
+            updateFormForRole();
+
+            // Ejecutar la función si el hash cambia dinámicamente
+            window.addEventListener('hashchange', updateFormForRole);
+        });
+    </script>
+</body>
+</html>
